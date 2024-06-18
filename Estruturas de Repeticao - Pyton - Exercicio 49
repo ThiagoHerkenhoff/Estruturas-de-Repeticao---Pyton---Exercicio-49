@@ -1,0 +1,20 @@
+# 49 - O funcionário chamado Carlos tem um colega chamado João que recebeu um salário que equivale a um
+# terço do seu salário. Carlos gosta de fazer aplicações na caderneta de poupança e vai aplicar
+# integralmente nela, pois está rendendo 2% ao mês. João aplicará seu salário integralmente no fundo
+# de renda fixa, que está rendendo 5% ao mês. Construa um programa que deverá calcular e mostrar a quantidade
+# de meses necessários para que o valor pertencente a João iguale ou ultrapasse o valor pertencente a Carlos.
+# Teste com outros valores para as taxas.
+
+salario_carlos = float(input('Digite o salário de Carlos: '))
+salario_joao = salario_carlos / 3
+poupanca = float(input('Informe a taxa de rendimento da poupança (em decimal): '))
+renda_fixa = float(input('Informe a taxa de rendimento da renda fixa (em decimal): '))
+
+meses = 0
+
+while salario_joao < salario_carlos:
+    salario_carlos = salario_carlos * (1 + poupanca)
+    salario_joao = salario_joao * (1 + renda_fixa)
+    meses = meses + 1
+
+print(f'Serão necessários {meses} meses para o valor pertencente a João iguale ao de Carlos')
